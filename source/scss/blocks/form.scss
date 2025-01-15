@@ -29,12 +29,19 @@
   }
 }
 
+.form__field-wrapper {
+  margin-right: 3rem;
+  width: calc(100% - 21rem);
+  display: flex;
+  align-items: right;
+}
+
 .form__field {
   flex: none;
-  margin-right: 3rem;
-  padding: 0 5.6rem;
+  margin-left: auto;
+  padding: 0;
   height: 6rem;
-  width: calc(100% - 21rem);
+  width: 0;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -43,6 +50,7 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  transition: width 0.5s, padding 0.5s;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -78,7 +86,15 @@
   }
 }
 
+.screen--game.active {
+  .form__field {
+    width: 100%;
+    padding: 0 5.6rem;
+  }
+}
+
 .form__button {
+  margin-left: auto;
   flex-grow: 1;
 
   @media (orientation: portrait) {
